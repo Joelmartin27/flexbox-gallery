@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+img{
+    width:100%;
+}
+header{
+    background-color:aqua;
+    padding: 30px;
+    text-align: center;
+}
+footer{
+    background-color: blueviolet;
+    padding: 20px;
+    text-align: center;
+}
+/* the flex container */
+#row{
+    /* use flex  on parent div of columns */
+    display: flex;
+    /* use row for desktop and tablet layouts */
+    flex-direction: row;
+    /* wrap is used with tablet layout to create an extra row */
+    flex-wrap: wrap;
+
+}
+.column{
+    /* flex 1 sets flex-grow to 1, flex-shrink to 1 and flex-basis to 1 meaning 
+    child items will have equal width */
+    flex: 1;
+    /* because box-sizing = border-box, padding is counted in overall width */
+    padding: 10px;
+
+}
+/* break point for tablet */
+@media screen and (max-width: 900px){
+    .column{
+        min-width: 50%;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+}
+/* break point for mobile */
+@media screen and (max-width: 500px){
+    .column{
+        min-width: 100%;
+    }
+    #row{
+        flex-direction: column;
+    }
+
+}
